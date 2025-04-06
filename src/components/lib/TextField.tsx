@@ -16,12 +16,19 @@ const TextField = ({
   ...htmlInputProps
 }: TextFieldProps) => {
   const id = useId();
+  const errorId = useId();
 
   return (
     <InputContainer>
       <Label htmlFor={id}>{label}</Label>
-      <Input id={id} aria-invalid={hasError} aria-required={isRequired} {...htmlInputProps} />
-      {hasError && <ErrorText>{errorMessage}</ErrorText>}
+      <Input
+        id={id}
+        aria-invalid={hasError}
+        aria-errormessage={hasError ? errorId : undefined}
+        aria-required={isRequired}
+        {...htmlInputProps}
+      />
+      {hasError && <ErrorText id={errorId}>{errorMessage}</ErrorText>}
     </InputContainer>
   );
 };
