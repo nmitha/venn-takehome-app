@@ -5,7 +5,7 @@ import {
   OnboardingFormDataSchema,
   type OnboardingFormData,
   postProfileDetails,
-} from '../apiClients/onboardingApiClient';
+} from '../../apiClients/onboardingApiClient';
 
 const OnboardingForm = () => {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -43,11 +43,13 @@ const OnboardingForm = () => {
         </p>
       )}
 
-      <input placeholder="First Name" {...register('firstName')} />
-      {errors.firstName && <span>First Name is required</span>}
+      <fieldset>
+        <input placeholder="First Name" {...register('firstName')} />
+        {errors.firstName && <span>First Name is required</span>}
 
-      <input placeholder="Last Name" {...register('lastName')} />
-      {errors.lastName && <span>Last Name is required</span>}
+        <input placeholder="Last Name" {...register('lastName')} />
+        {errors.lastName && <span>Last Name is required</span>}
+      </fieldset>
 
       <input placeholder="Phone Number" {...register('phone')} />
       {errors.phone && (

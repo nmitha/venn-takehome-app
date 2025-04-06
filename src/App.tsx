@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './App.css';
-import OnboardingFormStep from './components/OnboardingFormStep';
+import OnboardingFormStep from './components/app/OnboardingFormStep';
 import { ErrorBoundary } from 'react-error-boundary';
 
 const handleError = (error: Error, info: React.ErrorInfo) => {
