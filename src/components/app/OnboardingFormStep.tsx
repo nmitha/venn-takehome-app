@@ -1,12 +1,7 @@
 import OnboardingForm from './OnboardingForm';
 
 const OnboardingFormStep = () => {
-  return (
-    <div>
-      <h1>Onboarding Form</h1>
-      <OnboardingForm />
-    </div>
-  );
+  return <OnboardingForm />;
 };
 
 export default OnboardingFormStep;

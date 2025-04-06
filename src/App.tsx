@@ -15,9 +15,6 @@ function App() {
         onError={handleError}
         fallback={<p>Something went wrong. Please try again.</p>}
       >
-        {/* When we ship we'll have a header with the main website title as <h1>, so the heading
-            level starts at <h2> here */}
-        <h2>Step 1 of 5</h2>
         <OnboardingFormStep />
       </ErrorBoundary>
     </main>
