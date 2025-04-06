@@ -27,3 +27,9 @@
     errorFadeIn 0.3s ease forwards,
     errorShake 0.4s ease 0.1s;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-error-appear {
+    animation: errorFadeIn 0.3s ease forwards;
+  }
+}
