@@ -1,6 +1,6 @@
 # Vault take home interview task
 
-## Pre-requisites
+## Prerequisites
 
 You should use Node.js v22.14.0. Tests do not pass in Node.js v20 and below due to an issue with the latest version of MSW (Mock Service Worker).
 
