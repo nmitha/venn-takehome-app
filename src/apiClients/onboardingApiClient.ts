@@ -13,7 +13,8 @@ export const OnboardingFormDataSchema = type({
   firstName: 'string > 0',
   lastName: 'string > 0',
   phone: /^\+1[0-9]{10}$/,
-  corporationNumber: 'string == 9',
+  // Caution: Do not use string.numeric, integer or similar below because we could have leading zeros.
+  corporationNumber: 'string.digits == 9',
 });
 
 export type OnboardingFormData = typeof OnboardingFormDataSchema.infer;

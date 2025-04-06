@@ -43,30 +43,29 @@ const OnboardingForm = () => {
   return (
     <form onSubmit={handleSubmit(performSubmit)}>
       {serverErrorMessage && (
-        <p className="text-red-500 mb-4">
-          We couldn't save your profile data. Problems found:
-          <br />
-          {serverErrorMessage}
-        </p>
+        <div role="alert" className="text-red-500 mb-4">
+          <p>We couldn't save your profile data. Problems found:</p>
+          <p>{serverErrorMessage}</p>
+        </div>
       )}
 
       <InputGroup>
         <InputContainer>
           <Label htmlFor="firstName">First Name</Label>
-          <Input id="firstName" placeholder="First Name" {...register('firstName')} />
+          <Input id="firstName" aria-invalid={!!errors.firstName} {...register('firstName')} />
           {errors.firstName && <ErrorText>First Name is required</ErrorText>}
         </InputContainer>
 
         <InputContainer>
           <Label htmlFor="lastName">Last Name</Label>
-          <Input id="lastName" placeholder="Last Name" {...register('lastName')} />
+          <Input id="lastName" aria-invalid={!!errors.lastName} {...register('lastName')} />
           {errors.lastName && <ErrorText>Last Name is required</ErrorText>}
         </InputContainer>
       </InputGroup>
 
       <InputContainer>
         <Label htmlFor="phone">Phone Number</Label>
-        <Input id="phone" placeholder="Phone Number" {...register('phone')} />
+        <Input id="phone" aria-invalid={!!errors.phone} {...register('phone')} />
         {errors.phone && (
           <ErrorText>
             You must enter a valid Canadian phone number that is formatted like this example:
@@ -79,7 +78,8 @@ const OnboardingForm = () => {
         <Label htmlFor="corporationNumber">Corporation Number</Label>
         <Input
           id="corporationNumber"
-          placeholder="Corporation Number"
+          inputMode="numeric"
+          aria-invalid={!!errors.corporationNumber}
           {...register('corporationNumber')}
         />
         {errors.corporationNumber && <ErrorText>Invalid Corporation Number</ErrorText>}

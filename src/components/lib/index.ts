@@ -37,6 +37,6 @@ export const Input = twc.input`
   w-full p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base
 `;
 
-export const ErrorText = twc.span`
+export const ErrorText = twc.p.attrs({ role: 'alert' })`
   text-red-500 text-xs mt-1
 `;
