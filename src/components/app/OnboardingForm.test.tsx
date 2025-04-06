@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { http, HttpResponse } from 'msw';
@@ -7,15 +7,6 @@ import { server } from 'src/mocks/server';
 import { ONBOARDING_API_BASE_URL } from 'src/apiClients/onboardingApiClient';
 
 describe('OnboardingForm', () => {
-  beforeEach(() => {
-    // Reset to default success handler before each test
-    server.resetHandlers(
-      http.post(`${ONBOARDING_API_BASE_URL}/profile-details`, () => {
-        return HttpResponse.json({}, { status: 200 });
-      }),
-    );
-  });
-
   it('renders the form correctly', () => {
     render(<OnboardingForm />);
 
@@ -91,6 +82,13 @@ describe('OnboardingForm', () => {
   });
 
   it('submits the form with valid data', async () => {
+    server.use(
+      http.post(`${ONBOARDING_API_BASE_URL}/profile-details`, () => {
+        console.log('MSW intercepted the profile-details request');
+        return HttpResponse.text('OK', { status: 200 });
+      }),
+    );
+
     render(<OnboardingForm />);
     const user = userEvent.setup();
 
@@ -107,6 +105,9 @@ describe('OnboardingForm', () => {
     await waitFor(() => {
       expect(screen.getByText('Got it, your profile details have been saved.')).toBeInTheDocument();
     });
+
+    // The submit button should no longer be present:
+    expect(screen.queryByRole('button', { name: /submit/i })).not.toBeInTheDocument();
   });
 
   it('displays server error when API returns an error', async () => {

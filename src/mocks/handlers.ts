@@ -1,7 +1,8 @@
 import { HttpResponse, http } from 'msw';
+import { ONBOARDING_API_BASE_URL } from 'src/apiClients/onboardingApiClient';
 
 export const handlers = [
-  http.post('https://fe-hometask-api.qa.vault.tryvault.com/profile-details', () => {
-    return HttpResponse.json({}, { status: 200 });
+  http.post(`${ONBOARDING_API_BASE_URL}/profile-details`, () => {
+    return new HttpResponse('OK', { status: 200 });
   }),
 ];
