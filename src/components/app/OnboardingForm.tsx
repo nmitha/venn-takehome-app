@@ -6,16 +6,9 @@ import {
   type OnboardingFormData,
   postProfileDetails,
 } from 'src/apiClients/onboardingApiClient';
-import {
-  PrimaryButton,
-  InputGroup,
-  InputContainer,
-  Label,
-  Input,
-  ErrorText,
-  FormErrorText,
-} from 'src/components/lib';
+import { PrimaryButton, InputGroup, FormErrorText } from 'src/components/lib';
 import { startViewTransition } from 'src/util/viewTransitionUtils';
+import TextField from 'src/components/lib/TextField';
 
 const OnboardingForm = () => {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -55,40 +48,39 @@ const OnboardingForm = () => {
       )}
 
       <InputGroup>
-        <InputContainer>
-          <Label htmlFor="firstName">First Name</Label>
-          <Input id="firstName" aria-invalid={!!errors.firstName} {...register('firstName')} />
-          {errors.firstName && <ErrorText>First Name is required</ErrorText>}
-        </InputContainer>
+        <TextField
+          label="First Name"
+          isRequired
+          hasError={!!errors.firstName}
+          errorMessage="First Name is required"
+          {...register('firstName')}
+        />
 
-        <InputContainer>
-          <Label htmlFor="lastName">Last Name</Label>
-          <Input id="lastName" aria-invalid={!!errors.lastName} {...register('lastName')} />
-          {errors.lastName && <ErrorText>Last Name is required</ErrorText>}
-        </InputContainer>
+        <TextField
+          label="Last Name"
+          isRequired
+          hasError={!!errors.lastName}
+          errorMessage="Last Name is required"
+          {...register('lastName')}
+        />
       </InputGroup>
 
-      <InputContainer>
-        <Label htmlFor="phone">Phone Number</Label>
-        <Input id="phone" aria-invalid={!!errors.phone} {...register('phone')} />
-        {errors.phone && (
-          <ErrorText>
-            You must enter a valid Canadian phone number that is formatted like this example:
-            +14161234567
-          </ErrorText>
-        )}
-      </InputContainer>
+      <TextField
+        label="Phone Number"
+        isRequired
+        hasError={!!errors.phone}
+        errorMessage="You must enter a valid Canadian phone number that is formatted like this example: +14161234567"
+        {...register('phone')}
+      />
 
-      <InputContainer>
-        <Label htmlFor="corporationNumber">Corporation Number</Label>
-        <Input
-          id="corporationNumber"
-          inputMode="numeric"
-          aria-invalid={!!errors.corporationNumber}
-          {...register('corporationNumber')}
-        />
-        {errors.corporationNumber && <ErrorText>Invalid Corporation Number</ErrorText>}
-      </InputContainer>
+      <TextField
+        label="Corporation Number"
+        isRequired
+        hasError={!!errors.corporationNumber}
+        errorMessage="Invalid Corporation Number"
+        inputMode="numeric"
+        {...register('corporationNumber')}
+      />
 
       <PrimaryButton type="submit" disabled={isSubmitting}>
         {isSubmitting ? 'Submitting...' : 'Submit →'}

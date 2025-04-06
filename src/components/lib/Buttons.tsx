@@ -5,6 +5,8 @@ export const Button = twc.button`
   text-white font-semibold 
   rounded-md shadow-sm 
   transition-colors duration-200
+  cursor-pointer
+  disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-700 disabled:hover:bg-gray-700
 `;
 
 export const PrimaryButton = twc(Button)`
