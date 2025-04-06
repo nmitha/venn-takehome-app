@@ -1,4 +1,4 @@
-import { StepIndicator, FormTitle, Card, FormContainer } from '../lib';
+import { StepIndicator, FormTitle, Card, FormContainer } from 'src/components/lib';
 import OnboardingForm from './OnboardingForm';
 
 const OnboardingFormStep = () => {

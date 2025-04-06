@@ -1,6 +1,6 @@
 import { type } from 'arktype';
 import ky from 'ky';
-import { getUserFriendlyError, kyBeforeErrorHook } from './vaultApiClientCommon';
+import { getUserFriendlyError, kyBeforeErrorHook } from 'src/apiClients/vaultApiClientCommon';
 
 const api = ky.create({
   prefixUrl: 'https://fe-hometask-api.qa.vault.tryvault.com',

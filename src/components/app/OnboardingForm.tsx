@@ -5,8 +5,15 @@ import {
   OnboardingFormDataSchema,
   type OnboardingFormData,
   postProfileDetails,
-} from '../../apiClients/onboardingApiClient';
-import { PrimaryButton, InputGroup, InputContainer, Label, Input, ErrorText } from '../lib';
+} from 'src/apiClients/onboardingApiClient';
+import {
+  PrimaryButton,
+  InputGroup,
+  InputContainer,
+  Label,
+  Input,
+  ErrorText,
+} from 'src/components/lib';
 
 const OnboardingForm = () => {
   const [isSuccess, setIsSuccess] = useState(false);
