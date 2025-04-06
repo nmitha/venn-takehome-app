@@ -40,3 +40,7 @@ export const Input = twc.input`
 export const ErrorText = twc.p.attrs({ role: 'alert' })`
   text-red-500 text-xs mt-1 animate-error-appear
 `;
+
+export const FormErrorText = twc.div.attrs({ role: 'alert' })`
+  text-red-500 mb-4 animate-error-appear
+`;

@@ -13,6 +13,7 @@ import {
   Label,
   Input,
   ErrorText,
+  FormErrorText,
 } from 'src/components/lib';
 import { startViewTransition } from 'src/util/viewTransitionUtils';
 
@@ -47,10 +48,10 @@ const OnboardingForm = () => {
   return (
     <form onSubmit={handleSubmit(performSubmit)}>
       {serverErrorMessage && (
-        <div role="alert" className="text-red-500 mb-4 animate-error-appear">
+        <FormErrorText>
           <p>We couldn't save your profile data. Problems found:</p>
           <p>{serverErrorMessage}</p>
-        </div>
+        </FormErrorText>
       )}
 
       <InputGroup>
