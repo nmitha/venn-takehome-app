@@ -25,6 +25,7 @@ const OnboardingForm = () => {
   });
 
   const performSubmit = useCallback(async (data: OnboardingFormData) => {
+    setServerErrorMessage(null);
     const result = await postProfileDetails(data);
 
     startViewTransition(() => {
