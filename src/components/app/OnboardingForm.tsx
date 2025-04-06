@@ -14,6 +14,7 @@ import {
   Input,
   ErrorText,
 } from 'src/components/lib';
+import { startViewTransition } from 'src/util/viewTransitionUtils';
 
 const OnboardingForm = () => {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -31,8 +32,11 @@ const OnboardingForm = () => {
 
   const performSubmit = useCallback(async (data: OnboardingFormData) => {
     const result = await postProfileDetails(data);
-    setIsSuccess(result.isSuccess);
-    setServerErrorMessage(result.errorMessage);
+
+    startViewTransition(() => {
+      setIsSuccess(result.isSuccess);
+      setServerErrorMessage(result.errorMessage);
+    });
   }, []);
 
   if (isSuccess) {
@@ -43,7 +47,7 @@ const OnboardingForm = () => {
   return (
     <form onSubmit={handleSubmit(performSubmit)}>
       {serverErrorMessage && (
-        <div role="alert" className="text-red-500 mb-4">
+        <div role="alert" className="text-red-500 mb-4 animate-error-appear">
           <p>We couldn't save your profile data. Problems found:</p>
           <p>{serverErrorMessage}</p>
         </div>

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import 'src/App.css';
+import 'src/components/lib/animations.css';
 import OnboardingFormStep from 'src/components/app/OnboardingFormStep';
 import { ErrorBoundary } from 'react-error-boundary';
 

@@ -38,5 +38,5 @@ export const Input = twc.input`
 `;
 
 export const ErrorText = twc.p.attrs({ role: 'alert' })`
-  text-red-500 text-xs mt-1
+  text-red-500 text-xs mt-1 animate-error-appear
 `;
