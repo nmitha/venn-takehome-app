@@ -17,7 +17,7 @@ export const Card = twc.div`
   bg-white rounded-xl shadow-sm p-8 w-full max-w-md
 `;
 
-export const FormTitle = twc.h2`
+export const H2 = twc.h2`
   text-2xl font-medium text-center mb-6 text-gray-900
 `;
 

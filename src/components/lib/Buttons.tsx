@@ -2,7 +2,6 @@ import { twc } from 'react-twc';
 
 export const Button = twc.button`
   px-4 py-2 
-
   text-white font-semibold 
   rounded-md shadow-sm 
   transition-colors duration-200
