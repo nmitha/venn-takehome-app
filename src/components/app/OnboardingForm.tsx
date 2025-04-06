@@ -5,7 +5,7 @@ import {
   OnboardingFormDataSchema,
   type OnboardingFormData,
   postProfileDetails,
-} from 'src/apiClients/onboardingApiClient';
+} from 'src/apiClients/vault/onboardingApiClient';
 import { PrimaryButton, InputGroup, FormErrorText } from 'src/components/lib';
 import { startViewTransition } from 'src/util/viewTransitionUtils';
 import TextField from 'src/components/lib/TextField';

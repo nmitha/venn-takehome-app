@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { http, HttpResponse } from 'msw';
 import OnboardingForm from 'src/components/app/OnboardingForm';
 import { server } from 'src/mocks/server';
-import { ONBOARDING_API_BASE_URL } from 'src/apiClients/onboardingApiClient';
+import { ONBOARDING_API_BASE_URL } from 'src/apiClients/vault/onboardingApiClient';
 
 describe('OnboardingForm', () => {
   it('renders the form correctly', () => {

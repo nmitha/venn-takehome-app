@@ -1,6 +1,6 @@
 import { type } from 'arktype';
 import ky from 'ky';
-import { getUserFriendlyError, kyBeforeErrorHook } from 'src/apiClients/vaultApiClientCommon';
+import { getUserFriendlyError, kyBeforeErrorHook } from 'src/apiClients/vault/vaultApiClientCommon';
 
 export const ONBOARDING_API_BASE_URL = 'https://fe-hometask-api.qa.vault.tryvault.com';
 

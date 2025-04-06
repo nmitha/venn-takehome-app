@@ -3,6 +3,8 @@ import { HTTPError } from 'ky';
 export const kyBeforeErrorHook = async (error: HTTPError) => {
   try {
     const errorResponse = await error.response.json<{ message: string } | null>();
+    // Vault API's failure responses include a message that is non-technical and should be shown to
+    // the user.
     if (errorResponse?.message) {
       // Mutating `error` is OK here per the ky docs: https://github.com/sindresorhus/ky?tab=readme-ov-file#hooksbeforeerror
       error.message = errorResponse.message;
