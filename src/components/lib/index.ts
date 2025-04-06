@@ -5,7 +5,7 @@ export * from 'src/components/lib/Buttons';
 // Normally the rest of the components wouldn't all be in 1 file like this, but for a take home challenge it's OK
 // TODO: Use Prettier to auto-sort Tailwind classes
 
-export const FormContainer = twc.div`
+export const StepContainer = twc.div`
   min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4
 `;
 

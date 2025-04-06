@@ -1,16 +1,18 @@
-import { StepIndicator, FormTitle, Card, FormContainer } from 'src/components/lib';
+import { StepIndicator, FormTitle, Card, StepContainer } from 'src/components/lib';
 import OnboardingForm from 'src/components/app/OnboardingForm';
 
 const OnboardingFormStep = () => {
   return (
     <>
-      <FormContainer>
+      <StepContainer>
         <StepIndicator>Step 1 of 5</StepIndicator>
         <Card>
+          {/* We start at heading level <h2> here because we'll be implementing a page header
+              with an <h1> website title */}
           <FormTitle>Onboarding Form</FormTitle>
           <OnboardingForm />
         </Card>
-      </FormContainer>
+      </StepContainer>
     </>
   );
 };
