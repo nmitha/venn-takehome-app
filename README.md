@@ -2,16 +2,22 @@
 
 ## Pre-requisites
 
-You must have Node.js v22.14.0 or `nvm` (node version manager) installed. Tests do not pass in node v20 and below due to using the latest version of MSW (Mock Service Worker).
+You should use Node.js v22.14.0. Tests do not pass in Node.js v20 and below due to an issue with the latest version of MSW (Mock Service Worker).
 
 ```bash
-nvm install 22.14.0
+# If you have nvm, this will read .nvmrc and make sure you are all set:
+nvm use
+```
+
+Next, install the dependencies:
+
+```bash
+npm install
 ```
 
 ## Running the app
 
 ```bash
-npm install
 npm run dev
 ```
 
