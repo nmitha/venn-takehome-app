@@ -6,18 +6,7 @@ import {
   type OnboardingFormData,
   postProfileDetails,
 } from '../../apiClients/onboardingApiClient';
-import {
-  PrimaryButton,
-  FormContainer,
-  StepIndicator,
-  Card,
-  FormTitle,
-  InputGroup,
-  InputContainer,
-  Label,
-  Input,
-  ErrorText,
-} from '../lib';
+import { PrimaryButton, InputGroup, InputContainer, Label, Input, ErrorText } from '../lib';
 
 const OnboardingForm = () => {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -45,60 +34,54 @@ const OnboardingForm = () => {
   }
 
   return (
-    <FormContainer>
-      <StepIndicator>Step 1 of 5</StepIndicator>
-      <Card>
-        <FormTitle>Onboarding Form</FormTitle>
-        <form onSubmit={handleSubmit(performSubmit)}>
-          {serverErrorMessage && (
-            <p className="text-red-500 mb-4">
-              We couldn't save your profile data. Problems found:
-              <br />
-              {serverErrorMessage}
-            </p>
-          )}
+    <form onSubmit={handleSubmit(performSubmit)}>
+      {serverErrorMessage && (
+        <p className="text-red-500 mb-4">
+          We couldn't save your profile data. Problems found:
+          <br />
+          {serverErrorMessage}
+        </p>
+      )}
 
-          <InputGroup>
-            <InputContainer>
-              <Label htmlFor="firstName">First Name</Label>
-              <Input id="firstName" placeholder="First Name" {...register('firstName')} />
-              {errors.firstName && <ErrorText>First Name is required</ErrorText>}
-            </InputContainer>
+      <InputGroup>
+        <InputContainer>
+          <Label htmlFor="firstName">First Name</Label>
+          <Input id="firstName" placeholder="First Name" {...register('firstName')} />
+          {errors.firstName && <ErrorText>First Name is required</ErrorText>}
+        </InputContainer>
 
-            <InputContainer>
-              <Label htmlFor="lastName">Last Name</Label>
-              <Input id="lastName" placeholder="Last Name" {...register('lastName')} />
-              {errors.lastName && <ErrorText>Last Name is required</ErrorText>}
-            </InputContainer>
-          </InputGroup>
+        <InputContainer>
+          <Label htmlFor="lastName">Last Name</Label>
+          <Input id="lastName" placeholder="Last Name" {...register('lastName')} />
+          {errors.lastName && <ErrorText>Last Name is required</ErrorText>}
+        </InputContainer>
+      </InputGroup>
 
-          <InputContainer>
-            <Label htmlFor="phone">Phone Number</Label>
-            <Input id="phone" placeholder="Phone Number" {...register('phone')} />
-            {errors.phone && (
-              <ErrorText>
-                You must enter a valid Canadian phone number that is formatted like this example:
-                +14161234567
-              </ErrorText>
-            )}
-          </InputContainer>
+      <InputContainer>
+        <Label htmlFor="phone">Phone Number</Label>
+        <Input id="phone" placeholder="Phone Number" {...register('phone')} />
+        {errors.phone && (
+          <ErrorText>
+            You must enter a valid Canadian phone number that is formatted like this example:
+            +14161234567
+          </ErrorText>
+        )}
+      </InputContainer>
 
-          <InputContainer>
-            <Label htmlFor="corporationNumber">Corporation Number</Label>
-            <Input
-              id="corporationNumber"
-              placeholder="Corporation Number"
-              {...register('corporationNumber')}
-            />
-            {errors.corporationNumber && <ErrorText>Invalid Corporation Number</ErrorText>}
-          </InputContainer>
+      <InputContainer>
+        <Label htmlFor="corporationNumber">Corporation Number</Label>
+        <Input
+          id="corporationNumber"
+          placeholder="Corporation Number"
+          {...register('corporationNumber')}
+        />
+        {errors.corporationNumber && <ErrorText>Invalid Corporation Number</ErrorText>}
+      </InputContainer>
 
-          <PrimaryButton type="submit" disabled={isSubmitting}>
-            {isSubmitting ? 'Submitting...' : 'Submit →'}
-          </PrimaryButton>
-        </form>
-      </Card>
-    </FormContainer>
+      <PrimaryButton type="submit" disabled={isSubmitting}>
+        {isSubmitting ? 'Submitting...' : 'Submit →'}
+      </PrimaryButton>
+    </form>
   );
 };
 

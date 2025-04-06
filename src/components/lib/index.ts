@@ -1,6 +1,6 @@
 import { twc } from 'react-twc';
 
-export * from './Button';
+export * from './Buttons';
 
 // Normally the rest of the components wouldn't all be in 1 file like this, but for a take home challenge it's OK
 // TODO: Use Prettier to auto-sort Tailwind classes
