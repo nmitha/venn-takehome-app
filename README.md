@@ -34,7 +34,9 @@ npm run test
 ![image](https://github.com/user-attachments/assets/bd528bf2-7e81-4a96-b68f-3e6bf78dd908)
 
 The error message from the API does not indicate which field(s) are affected, so we show it like this:
+
 ![image](https://github.com/user-attachments/assets/44a82a79-8952-46ba-a905-b6c984d9b456)
 
 On mobile:
+
 ![image](https://github.com/user-attachments/assets/0453babe-8bfd-4cac-8419-0dc7a587d507)
