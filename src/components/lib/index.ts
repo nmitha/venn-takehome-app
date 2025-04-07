@@ -17,7 +17,8 @@ export const Card = twc.div`
   bg-white rounded-xl shadow-sm p-4 sm:p-8 w-full sm:w-[525px]
 `;
 
-export const H2 = twc.h2`  text-xl sm:text-2xl font-medium text-center mb-6 text-gray-900
+export const H2 = twc.h2`
+  text-xl sm:text-2xl font-medium text-center mb-6 text-gray-900
 `;
 
 export const InputGroup = twc.fieldset`
