@@ -11,6 +11,6 @@ export const Button = twc.button`
 
 export const PrimaryButton = twc(Button)`
   bg-black hover:bg-black/75
-  w-full py-3 mt-4 rounded-md flex items-center justify-center
-  text-sm font-medium
+  w-full py-3 mt-4 sm:mt-8 rounded-md flex items-center justify-center
+  text-sm sm:text-base font-medium
 `;

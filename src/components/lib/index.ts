@@ -6,23 +6,22 @@ export * from 'src/components/lib/Buttons';
 // TODO: Use Prettier to auto-sort Tailwind classes
 
 export const StepContainer = twc.div`
-  min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4
+  min-h-screen bg-gray-50 flex flex-col items-center justify-start sm:justify-center p-4 pt-8
 `;
 
 export const StepIndicator = twc.div`
-  text-center font-normal text-gray-800 mb-8
+  text-center font-normal text-gray-800 mb-8 sm:mb-[125px]
 `;
 
 export const Card = twc.div`
-  bg-white rounded-xl shadow-sm p-8 w-full max-w-md
+  bg-white rounded-xl shadow-sm p-4 sm:p-8 w-full sm:w-[525px]
 `;
 
-export const H2 = twc.h2`
-  text-2xl font-medium text-center mb-6 text-gray-900
+export const H2 = twc.h2`  text-xl sm:text-2xl font-medium text-center mb-6 text-gray-900
 `;
 
 export const InputGroup = twc.fieldset`
-  flex gap-4
+  flex flex-col sm:flex-row sm:gap-4
 `;
 
 export const InputContainer = twc.div`
@@ -34,7 +33,7 @@ export const Label = twc.label`
 `;
 
 export const Input = twc.input`
-  w-full p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base
+  w-full p-3 border-2 border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base
 `;
 
 export const ErrorText = twc.p.attrs({ role: 'alert' })`
