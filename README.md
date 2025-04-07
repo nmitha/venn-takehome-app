@@ -35,3 +35,6 @@ npm run test
 
 The error message from the API does not indicate which field(s) are affected, so we show it like this:
 ![image](https://github.com/user-attachments/assets/44a82a79-8952-46ba-a905-b6c984d9b456)
+
+On mobile:
+![image](https://github.com/user-attachments/assets/0453babe-8bfd-4cac-8419-0dc7a587d507)
